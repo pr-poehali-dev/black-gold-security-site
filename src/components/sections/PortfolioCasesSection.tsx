@@ -32,7 +32,7 @@ const PortfolioCasesSection = ({
               className="text-4xl font-bold text-center mb-16 bg-transparent border-primary/30"
             />
           ) : (
-            <h2 className="text-4xl font-bold text-center mb-16 text-gold uppercase tracking-wider">{content.portfolioTitle}</h2>
+            <h2 className="text-4xl font-bold text-center mb-16 text-foreground uppercase tracking-wider">{content.portfolioTitle}</h2>
           )}
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -89,6 +89,7 @@ const PortfolioCasesSection = ({
             </div>
           )}
         </div>
+        <div className="section-divider mt-12" />
       </section>
 
       <section id="cases" className="py-20 px-4 relative">
@@ -101,7 +102,7 @@ const PortfolioCasesSection = ({
               className="text-4xl font-bold text-center mb-16 bg-transparent border-primary/30"
             />
           ) : (
-            <h2 className="text-4xl font-bold text-center mb-16 text-gold uppercase tracking-wider">{content.casesTitle}</h2>
+            <h2 className="text-4xl font-bold text-center mb-16 text-foreground uppercase tracking-wider">{content.casesTitle}</h2>
           )}
           
           <div className="max-w-4xl mx-auto space-y-8">
@@ -175,6 +176,7 @@ const PortfolioCasesSection = ({
             </div>
           )}
         </div>
+        <div className="section-divider mt-12" />
       </section>
     </>
   );

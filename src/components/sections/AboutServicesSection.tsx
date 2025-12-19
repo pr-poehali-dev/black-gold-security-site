@@ -35,7 +35,7 @@ const AboutServicesSection = ({
               className="text-4xl font-bold text-center mb-16 bg-transparent border-primary/30"
             />
           ) : (
-            <h2 className="text-4xl font-bold text-center mb-16 text-gold uppercase tracking-wider">{content.aboutTitle}</h2>
+            <h2 className="text-4xl font-bold text-center mb-16 text-foreground uppercase tracking-wider">{content.aboutTitle}</h2>
           )}
           
           <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -104,7 +104,7 @@ const AboutServicesSection = ({
               className="text-4xl font-bold text-center mb-4 bg-transparent border-primary/30"
             />
           ) : (
-            <h2 className="text-4xl font-bold text-center mb-4 text-gold uppercase tracking-wider">{content.servicesTitle}</h2>
+            <h2 className="text-4xl font-bold text-center mb-4 text-foreground uppercase tracking-wider">{content.servicesTitle}</h2>
           )}
           
           {isAdminMode ? (
@@ -191,6 +191,7 @@ const AboutServicesSection = ({
             </div>
           )}
         </div>
+        <div className="section-divider mt-12" />
       </section>
     </>
   );

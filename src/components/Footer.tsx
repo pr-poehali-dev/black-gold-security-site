@@ -14,12 +14,9 @@ const Footer = ({ content, setContent, isAdminMode, setShowAuthDialog }: FooterP
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="flex items-center space-x-2 mb-4 md:mb-0">
-            {content.logo ? (
-              <img src={content.logo} alt="Logo" className="h-6 w-6 object-contain" />
-            ) : (
-              <Icon name="Shield" className="text-primary" size={24} />
+            {content.logo && (
+              <img src={content.logo} alt="Logo" className="h-8 w-auto object-contain" />
             )}
-            <span className="text-lg font-bold text-gold tracking-wider">{content.companyName}</span>
           </div>
           
           {isAdminMode ? (

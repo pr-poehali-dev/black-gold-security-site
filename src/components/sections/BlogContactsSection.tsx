@@ -35,7 +35,7 @@ const BlogContactsSection = ({
               className="text-4xl font-bold text-center mb-16 bg-transparent border-primary/30"
             />
           ) : (
-            <h2 className="text-4xl font-bold text-center mb-16 text-gold uppercase tracking-wider">{content.blogTitle}</h2>
+            <h2 className="text-4xl font-bold text-center mb-16 text-foreground uppercase tracking-wider">{content.blogTitle}</h2>
           )}
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -92,6 +92,7 @@ const BlogContactsSection = ({
             </div>
           )}
         </div>
+        <div className="section-divider mt-12" />
       </section>
 
       <section id="contacts" className="py-20 px-4 relative">
@@ -104,7 +105,7 @@ const BlogContactsSection = ({
               className="text-4xl font-bold text-center mb-16 bg-transparent border-primary/30"
             />
           ) : (
-            <h2 className="text-4xl font-bold text-center mb-16 text-gold uppercase tracking-wider">{content.contactsTitle}</h2>
+            <h2 className="text-4xl font-bold text-center mb-16 text-foreground uppercase tracking-wider">{content.contactsTitle}</h2>
           )}
           
           <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
@@ -185,6 +186,7 @@ const BlogContactsSection = ({
             </Card>
           </div>
         </div>
+        <div className="section-divider mt-12" />
       </section>
     </>
   );

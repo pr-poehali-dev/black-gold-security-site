@@ -81,7 +81,7 @@
 
   .text-gold {
     color: #f4d03f;
-    text-shadow: 0 0 10px rgba(244, 208, 63, 0.5);
+    text-shadow: 0 0 3px rgba(244, 208, 63, 0.2);
   }
 
   .glow-border {
@@ -109,5 +109,17 @@
     box-shadow:
       0 0 30px rgba(244, 208, 63, 0.1),
       inset 0 0 30px rgba(244, 208, 63, 0.05);
+  }
+
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(244, 208, 63, 0.3) 50%,
+      transparent 100%
+    );
+    margin: 0 auto;
+    max-width: 90%;
   }
 }

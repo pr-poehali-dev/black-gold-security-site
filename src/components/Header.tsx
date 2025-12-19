@@ -40,7 +40,7 @@ const Header = ({
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 relative group">
             {content.logo ? (
-              <img src={content.logo} alt="Logo" className="h-10 w-10 object-contain" />
+              <img src={content.logo} alt="Logo" className="h-12 w-auto object-contain" />
             ) : (
               <Icon name="Shield" className="text-primary" size={32} />
             )}
@@ -58,14 +58,13 @@ const Header = ({
                 </label>
               </div>
             )}
-            {isAdminMode ? (
+            {isAdminMode && (
               <Input
                 value={content.companyName}
                 onChange={(e) => setContent({ ...content, companyName: e.target.value })}
                 className="text-xl font-bold text-primary bg-transparent border-primary/30 w-48"
+                placeholder="Название компании"
               />
-            ) : (
-              <span className="text-xl font-bold text-gold tracking-wider">{content.companyName}</span>
             )}
           </div>
 

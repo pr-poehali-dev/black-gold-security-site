@@ -14,8 +14,8 @@ const Index = () => {
   const [authPassword, setAuthPassword] = useState('');
 
   const [content, setContent] = useState({
-    logo: '',
-    companyName: 'SECURITY PRO',
+    logo: 'https://cdn.poehali.dev/files/photo_2025-12-18_16-02-54.png',
+    companyName: '',
     heroTitle: 'Защита вашего бизнеса — наша профессия',
     heroSubtitle: 'Комплексные решения по аутсорсингу службы безопасности для компаний любого масштаба',
     aboutTitle: 'О компании',
@@ -116,7 +116,7 @@ const Index = () => {
       { icon: 'Phone', title: 'Телефон', value: '+7 (495) 123-45-67' },
       { icon: 'Mail', title: 'Email', value: 'info@securitypro.ru' },
     ],
-    footerText: '© 2024 Security Pro. Все права защищены.',
+    footerText: '© 2024 Защита Бизнеса. Все права защищены.',
     menuItems: [
       { id: 'home', label: 'Главная' },
       { id: 'about', label: 'О компании' },

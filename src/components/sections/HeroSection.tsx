@@ -25,7 +25,7 @@ const HeroSection = ({ content, setContent, isAdminMode }: HeroSectionProps) => 
                 className="text-5xl lg:text-6xl font-bold leading-tight bg-muted h-32"
               />
             ) : (
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-gold uppercase tracking-wide">
+              <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-foreground uppercase tracking-wide">
                 {content.heroTitle}
               </h1>
             )}
@@ -75,6 +75,7 @@ const HeroSection = ({ content, setContent, isAdminMode }: HeroSectionProps) => 
           </Card>
         </div>
       </div>
+      <div className="section-divider mt-12" />
     </section>
   );
 };
