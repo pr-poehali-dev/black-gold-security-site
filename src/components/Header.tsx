@@ -36,11 +36,11 @@ const Header = ({
         isScrolled ? 'bg-background/95 backdrop-blur-sm shadow-lg glow-border' : 'bg-transparent border-b border-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 relative group">
             {content.logo ? (
-              <img src={content.logo} alt="Logo" className="h-25 w-auto object-contain" />
+              <img src={content.logo} alt="Logo" className="h-12 w-auto object-contain" />
             ) : (
               <Icon name="Shield" className="text-primary" size={32} />
             )}
@@ -73,7 +73,7 @@ const Header = ({
               <div key={item.id} className="relative group">
                 <button
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-colors hover:text-gold uppercase tracking-wide ${
+                  className={`text-xs font-medium transition-colors hover:text-gold uppercase tracking-wide ${
                     activeSection === item.id ? 'text-gold' : 'text-muted-foreground'
                   }`}
                 >
@@ -97,7 +97,7 @@ const Header = ({
           </nav>
 
           <div className="flex items-center space-x-4">
-            <Button className="hidden lg:inline-flex gold-gradient text-background font-semibold">
+            <Button size="sm" className="hidden lg:inline-flex gold-gradient text-background font-semibold">
               Бесплатная консультация
             </Button>
             

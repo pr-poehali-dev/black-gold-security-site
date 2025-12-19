@@ -11,6 +11,7 @@ interface ContentSectionsProps {
   removeItem: (section: string, index: number) => void;
   addItem: (section: string) => void;
   iconOptions: string[];
+  scrollToSection?: (sectionId: string) => void;
 }
 
 const ContentSections = ({
@@ -21,6 +22,7 @@ const ContentSections = ({
   removeItem,
   addItem,
   iconOptions,
+  scrollToSection,
 }: ContentSectionsProps) => {
   return (
     <>
@@ -28,6 +30,7 @@ const ContentSections = ({
         content={content}
         setContent={setContent}
         isAdminMode={isAdminMode}
+        scrollToSection={scrollToSection}
       />
 
       <AboutServicesSection

@@ -98,16 +98,19 @@ const Index = () => {
         title: 'Как проверить контрагента перед заключением сделки',
         date: '15 декабря 2024',
         category: 'Безопасность бизнеса',
+        content: 'Проверка контрагента — обязательный этап перед заключением любой сделки. В статье мы рассмотрим основные шаги: проверка регистрационных данных, анализ финансовой отчетности, изучение репутации и судебных дел. Это позволит избежать финансовых потерь и репутационных рисков.',
       },
       {
         title: 'DLP-системы: зачем они нужны вашему бизнесу',
         date: '10 декабря 2024',
         category: 'Защита информации',
+        content: 'DLP (Data Loss Prevention) — это система предотвращения утечки конфиденциальной информации. Она контролирует передачу данных через email, мессенджеры, USB-носители. Внедрение DLP позволяет защитить коммерческую тайну и предотвратить промышленный шпионаж.',
       },
       {
         title: 'Признаки недобросовестного подрядчика',
         date: '5 декабря 2024',
         category: 'Аудит',
+        content: 'Недобросовестные подрядчики могут нанести серьезный ущерб бизнесу. Основные признаки: завышение стоимости работ, нарушение сроков, плохое качество выполнения, отсутствие документов. Профессиональный аудит поможет выявить проблемы на ранней стадии.',
       },
     ],
     contactsTitle: 'Контакты',
@@ -190,7 +193,7 @@ const Index = () => {
     } else if (section === 'cases') {
       newContent.cases.push({ title: 'Новый кейс', description: 'Описание кейса', duration: 'Срок:', result: 'Результат:' });
     } else if (section === 'blogPosts') {
-      newContent.blogPosts.push({ title: 'Новая статья', date: new Date().toLocaleDateString('ru-RU'), category: 'Категория' });
+      newContent.blogPosts.push({ title: 'Новая статья', date: new Date().toLocaleDateString('ru-RU'), category: 'Категория', content: 'Содержимое статьи...' });
     } else if (section === 'contacts') {
       newContent.contacts.push({ icon: 'Mail', title: 'Новый контакт', value: 'Значение' });
     } else if (section === 'menuItems') {
@@ -240,6 +243,7 @@ const Index = () => {
         removeItem={removeItem}
         addItem={addItem}
         iconOptions={iconOptions}
+        scrollToSection={scrollToSection}
       />
 
       <Footer

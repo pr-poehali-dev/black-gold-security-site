@@ -4,6 +4,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { useState } from 'react';
 
 interface BlogContactsSectionProps {
   content: any;
@@ -24,6 +26,14 @@ const BlogContactsSection = ({
   addItem,
   iconOptions,
 }: BlogContactsSectionProps) => {
+  const [selectedPost, setSelectedPost] = useState<any>(null);
+  const [showArticleDialog, setShowArticleDialog] = useState(false);
+
+  const handlePostClick = (post: any) => {
+    setSelectedPost(post);
+    setShowArticleDialog(true);
+  };
+
   return (
     <>
       <section id="blog" className="py-20 px-4 bg-gradient-to-b from-transparent via-card/30 to-transparent tech-pattern">
@@ -40,7 +50,11 @@ const BlogContactsSection = ({
           
           <div className="grid md:grid-cols-3 gap-8">
             {content.blogPosts.map((post: any, index: number) => (
-              <Card key={index} className="p-6 cyber-card hover:shadow-[0_0_40px_rgba(244,208,63,0.2)] transition-all cursor-pointer relative group">
+              <Card 
+                key={index} 
+                className="p-6 cyber-card hover:shadow-[0_0_40px_rgba(244,208,63,0.2)] transition-all cursor-pointer relative group"
+                onClick={() => !isAdminMode && handlePostClick(post)}
+              >
                 {isAdminMode && (
                   <button
                     onClick={() => removeItem('blogPosts', index)}
@@ -78,6 +92,19 @@ const BlogContactsSection = ({
                   />
                 ) : (
                   <div className="text-sm text-muted-foreground">{post.date}</div>
+                )}
+                
+                {isAdminMode && (
+                  <div className="mt-4">
+                    <label className="text-xs text-muted-foreground">Содержимое статьи:</label>
+                    <Textarea
+                      value={post.content || ''}
+                      onChange={(e) => updateItem('blogPosts', index, 'content', e.target.value)}
+                      className="bg-muted mt-1"
+                      placeholder="Текст статьи..."
+                      rows={4}
+                    />
+                  </div>
                 )}
               </Card>
             ))}
@@ -188,6 +215,21 @@ const BlogContactsSection = ({
         </div>
         <div className="section-divider mt-12" />
       </section>
+
+      <Dialog open={showArticleDialog} onOpenChange={setShowArticleDialog}>
+        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto cyber-card">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-gold mb-2">{selectedPost?.title}</DialogTitle>
+            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+              <span className="text-gold uppercase tracking-wide">{selectedPost?.category}</span>
+              <span>{selectedPost?.date}</span>
+            </div>
+          </DialogHeader>
+          <div className="mt-4 text-foreground leading-relaxed whitespace-pre-wrap">
+            {selectedPost?.content || 'Содержимое статьи не добавлено'}
+          </div>
+        </DialogContent>
+      </Dialog>
     </>
   );
 };
