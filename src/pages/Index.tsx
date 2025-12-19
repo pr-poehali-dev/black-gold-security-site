@@ -32,31 +32,37 @@ const Index = () => {
         title: 'Проверка контрагентов',
         description: 'Комплексная или выборочная проверка: анализ благонадежности, финансовой документации, кредитной истории, установление бенефициаров',
         icon: 'SearchCheck',
+        image: '',
       },
       {
         title: 'Проверка кандидатов',
         description: 'Тщательная проверка при приеме на работу для минимизации рисков',
         icon: 'UserCheck',
+        image: '',
       },
       {
         title: 'Аналитические материалы',
         description: 'Подготовка информационно-аналитических материалов по запросу клиента',
         icon: 'FileText',
+        image: '',
       },
       {
         title: 'Финансовый аудит',
         description: 'Анализ и решение вопросов, связанных с безопасностью предприятия',
         icon: 'DollarSign',
+        image: '',
       },
       {
         title: 'Защита информации',
         description: 'Контроль коммерческой тайны. DLP, SIEM, антивирусные комплексы',
         icon: 'Shield',
+        image: '',
       },
       {
         title: 'Антикоррупционная политика',
         description: 'Разработка и реализация, выявление внутрикорпоративных злоупотреблений',
         icon: 'Scale',
+        image: '',
       },
     ],
     portfolioTitle: 'Портфолио',
@@ -65,16 +71,19 @@ const Index = () => {
         title: 'Крупный производственный холдинг',
         description: 'Выявили схему хищений на сумму 45 млн руб. Взыскано 100% ущерба',
         result: '45 млн ₽',
+        image: '',
       },
       {
         title: 'Строительная компания',
         description: 'Проверка объемов работ подрядчиков. Предотвращено завышение стоимости на 28 млн руб',
         result: '28 млн ₽',
+        image: '',
       },
       {
         title: 'Логистическая компания',
         description: 'Комплексная проверка 150 контрагентов. Исключены 12 недобросовестных партнеров',
         result: '150 проверок',
+        image: '',
       },
     ],
     casesTitle: 'Успешные кейсы',
@@ -160,7 +169,7 @@ const Index = () => {
   };
 
   const handleAuth = () => {
-    if (authPassword === 'admin123') {
+    if (authPassword === 'Adminzachitabusinessa!QAZ') {
       setIsAdminMode(true);
       setShowAuthDialog(false);
       toast.success('Вы вошли в режим администратора');
@@ -187,9 +196,9 @@ const Index = () => {
     if (section === 'aboutStats') {
       newContent.aboutStats.push({ value: '0', label: 'Новый показатель' });
     } else if (section === 'services') {
-      newContent.services.push({ title: 'Новая услуга', description: 'Описание услуги', icon: 'Shield' });
+      newContent.services.push({ title: 'Новая услуга', description: 'Описание услуги', icon: 'Shield', image: '' });
     } else if (section === 'portfolio') {
-      newContent.portfolio.push({ title: 'Новый проект', description: 'Описание проекта', result: '0' });
+      newContent.portfolio.push({ title: 'Новый проект', description: 'Описание проекта', result: '0', image: '' });
     } else if (section === 'cases') {
       newContent.cases.push({ title: 'Новый кейс', description: 'Описание кейса', duration: 'Срок:', result: 'Результат:' });
     } else if (section === 'blogPosts') {

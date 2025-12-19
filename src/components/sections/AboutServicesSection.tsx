@@ -4,6 +4,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import ImageUpload from '@/components/ImageUpload';
 
 interface AboutServicesSectionProps {
   content: any;
@@ -135,27 +136,39 @@ const AboutServicesSection = ({
                 )}
                 
                 {isAdminMode ? (
-                  <Select
-                    value={service.icon}
-                    onValueChange={(value) => updateItem('services', index, 'icon', value)}
-                  >
-                    <SelectTrigger className="w-full mb-4">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {iconOptions.map((icon) => (
-                        <SelectItem key={icon} value={icon}>
-                          <div className="flex items-center">
-                            <Icon name={icon as any} size={20} className="mr-2" />
-                            {icon}
-                          </div>
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                  <div className="mb-4 space-y-2">
+                    <ImageUpload
+                      currentImage={service.image}
+                      onImageUpload={(base64) => updateItem('services', index, 'image', base64)}
+                      label="Иконка/Изображение"
+                      showPreview={false}
+                    />
+                    <Select
+                      value={service.icon}
+                      onValueChange={(value) => updateItem('services', index, 'icon', value)}
+                    >
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Или выберите иконку" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {iconOptions.map((icon) => (
+                          <SelectItem key={icon} value={icon}>
+                            <div className="flex items-center">
+                              <Icon name={icon as any} size={20} className="mr-2" />
+                              {icon}
+                            </div>
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
                 ) : (
-                  <div className="mb-4">
-                    <Icon name={service.icon as any} className="text-gold" size={48} />
+                  <div className="mb-4 flex justify-center">
+                    {service.image ? (
+                      <img src={service.image} alt={service.title} className="w-16 h-16 object-contain" />
+                    ) : (
+                      <Icon name={service.icon as any} className="text-gold" size={48} />
+                    )}
                   </div>
                 )}
                 

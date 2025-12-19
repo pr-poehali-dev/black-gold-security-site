@@ -38,14 +38,14 @@ const Header = ({
     >
       <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2 relative group">
+          <div className="flex items-center relative group">
             {content.logo ? (
-              <img src={content.logo} alt="Logo" className="h-10 w-20 object-cover" />
+              <img src={content.logo} alt="Logo" className="h-14 w-auto object-contain" />
             ) : (
               <Icon name="Shield" className="text-primary" size={32} />
             )}
             {isAdminMode && (
-              <div className="absolute -top-8 left-0 opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="absolute -top-8 left-0 opacity-0 group-hover:opacity-100 transition-opacity z-50">
                 <input
                   type="file"
                   accept="image/*"
@@ -54,17 +54,9 @@ const Header = ({
                   id="logo-upload"
                 />
                 <label htmlFor="logo-upload" className="cursor-pointer text-xs bg-primary text-background px-2 py-1 rounded">
-                  Изменить
+                  Изменить логотип
                 </label>
               </div>
-            )}
-            {isAdminMode && (
-              <Input
-                value={content.companyName}
-                onChange={(e) => setContent({ ...content, companyName: e.target.value })}
-                className="text-xl font-bold text-primary bg-transparent border-primary/30 w-48"
-                placeholder="Название компании"
-              />
             )}
           </div>
 

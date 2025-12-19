@@ -3,6 +3,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
+import ImageUpload from '@/components/ImageUpload';
 
 interface PortfolioCasesSectionProps {
   content: any;
@@ -41,10 +42,26 @@ const PortfolioCasesSection = ({
                 {isAdminMode && (
                   <button
                     onClick={() => removeItem('portfolio', index)}
-                    className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 text-red-500"
+                    className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 text-red-500 z-10"
                   >
                     <Icon name="Trash2" size={16} />
                   </button>
+                )}
+                
+                {item.image && !isAdminMode && (
+                  <div className="mb-4">
+                    <img src={item.image} alt={item.title} className="w-full h-32 object-cover rounded" />
+                  </div>
+                )}
+                
+                {isAdminMode && (
+                  <div className="mb-4">
+                    <ImageUpload
+                      currentImage={item.image}
+                      onImageUpload={(base64) => updateItem('portfolio', index, 'image', base64)}
+                      label="Добавить изображение"
+                    />
+                  </div>
                 )}
                 
                 {isAdminMode ? (
