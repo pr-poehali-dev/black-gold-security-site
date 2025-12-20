@@ -37,7 +37,7 @@ const Header = ({
       }`}
     >
       <div className="container mx-auto px-4 py-2">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between py-0 my-0 mx-0 px-[33px]">
           <div className="flex items-center relative group">
             {content.logo ? (
               <img src={content.logo} alt="Logo" className="h-20 my50 mx-50object-contain py-0 px-0 object-contain" />
